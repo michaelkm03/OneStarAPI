@@ -7,7 +7,7 @@ import javax.persistence.Id
 import javax.validation.constraints.NotBlank
 
 @Entity
-data class Clothing_Shoes_And_Jewelry (
+data class SpringbootTestData (
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long = 0,
 

@@ -1,6 +1,6 @@
 package com.onestar.onestarapi
 
-import com.onestar.onestarapi.model.Clothing_Shoes_And_Jewelry
+import com.onestar.onestarapi.model.SpringbootTestData
 import com.onestar.onestarapi.repository.ItemRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,12 +13,12 @@ import javax.validation.Valid
 class TestController(private val itemRepository: ItemRepository) {
 
     @GetMapping("/items")
-    fun getAllItems(): List<Clothing_Shoes_And_Jewelry> =
+    fun getAllItems(): List<SpringbootTestData> =
             itemRepository.findAll()
 
     @GetMapping("/items/{id}")
-    fun getAllItemsById(@PathVariable(value = "id") articleId: Long): ResponseEntity<Clothing_Shoes_And_Jewelry> {
-        return itemRepository.findById(articleId).map { article ->
+    fun getAllItemsById(@PathVariable(value = "id") itemId: Long): ResponseEntity<SpringbootTestData> {
+        return itemRepository.findById(itemId).map { article ->
             ResponseEntity.ok(article)
         }.orElse(ResponseEntity.notFound().build())
     }
