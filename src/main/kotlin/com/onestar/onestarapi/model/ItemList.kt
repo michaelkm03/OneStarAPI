@@ -1,5 +1,5 @@
 package com.onestar.onestarapi.model
 
 data class ItemList(
-        var list : String?
+        var list : MutableList<Long>?
 )
