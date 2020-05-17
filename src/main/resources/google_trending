@@ -1,0 +1,9 @@
+SELECT
+  id, reviewername, reviewtext
+FROM (
+  SELECT
+    id, reviewername, reviewtext
+  FROM reviews
+  WHERE rating = 1
+) t
+

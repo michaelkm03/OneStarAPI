@@ -1,0 +1,9 @@
+SELECT
+  id, vote, reviewername, summary, reviewtext
+FROM (
+  SELECT
+    id, vote, reviewername, summary, reviewtext
+  FROM arts_crafts_and_sewing
+  WHERE overall = 1
+) t
+ORDER BY vote DESC;

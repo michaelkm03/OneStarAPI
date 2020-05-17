@@ -1,0 +1,9 @@
+SELECT
+  business_id, `text`, CONCAT("https://www.yelp.com/biz/", business_id) as "url"
+FROM (
+  SELECT
+    business_id, `text`
+  FROM business_reviews
+  WHERE stars = 1 AND CHAR_LENGTH(text) > 120
+) t
+LIMIT 100;
