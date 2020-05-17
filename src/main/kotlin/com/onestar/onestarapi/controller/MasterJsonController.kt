@@ -15,8 +15,8 @@ class MasterJsonController(private val itemRepository: ItemRepository) {
 
     @GetMapping("/items/{id}")
     fun getAllItemsById(@PathVariable(value = "id") itemId: Long): ResponseEntity<MasterJson> {
-        return itemRepository.findById(itemId).map { article ->
-            ResponseEntity.ok(article)
+        return itemRepository.findById(itemId).map { itemId ->
+            ResponseEntity.ok(itemId)
         }.orElse(ResponseEntity.notFound().build())
     }
 /*
